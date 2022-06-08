@@ -1,0 +1,102 @@
+*{
+	margin:0;
+	padding:0;
+}
+body{
+	height:100vh;
+	display:flex;
+	flex-direction:column;
+	justify-content: center;
+	align-items:center;
+	background-color:#70f;
+}
+.tablero{
+	width:600px;
+	padding:10px;
+	border:5px solid white;
+	display:flex;
+	flex-wrap:wrap;
+}
+.circulo{
+	background-color:white;
+	border-radius:50%;
+	margin:20px;
+	width:110px;
+	height:110px;
+}
+.invisible{
+	opacity:0;
+	pointer-events:none;
+	animation:eliminar 0.4s;
+}
+.timer{
+	width:600px;
+	padding:10px;
+	border:5px solid white;
+	height:10px;
+	display:flex;
+	margin-top:20px;
+}
+.timer div{
+	margin:0 5px;
+	background-color:white;
+}
+.modal{
+	position:fixed;
+	width:100%;
+	height:100vh;
+	background-color:rgba(0,0,0,0.8);
+	top:0;
+	left:0;
+	display:none;
+	justify-content: center;
+	align-items:center;
+	flex-direction:column;
+}
+.modal-visible{
+	display:flex;
+}
+.modal h2{
+	color:white;
+	font-size:5em;
+	transform:rotate(90deg);
+}
+.modal h3{
+	font-size:2em;
+	margin-top:20px;
+	display:none;
+	color:white;
+}
+.modal h3.visible{
+	display:block;
+}
+.modal a{
+	display:block;
+	border:1px solid white;
+	width:100px;
+	text-align:center;
+	padding:10px 0;
+	border-radius:10px;
+	color:white;
+	text-decoration:none;
+	margin-top:20px;
+}
+
+@keyframes eliminar{
+	0%{
+		transform:scale(1);
+		opacity:1;
+	}
+	10%{
+		transform:scale(1.3);
+		opacity:1;
+	}
+	99%{
+		transform:scale(0.001);
+		opacity:1;
+	}
+	100%{
+		transform:scale(0.001);
+		opacity:0;
+	}
+}
